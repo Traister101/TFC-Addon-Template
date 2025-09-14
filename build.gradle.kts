@@ -37,7 +37,7 @@ val generateModMetadata = tasks.register<ProcessResources>("generateModMetadata"
 }
 
 base {
-    archivesName.set("$modName-${libs.versions.minecraft}")
+    archivesName.set("$modName-${libs.versions.minecraft.get()}")
     version = modVersion
     group = modGroupId
 }
