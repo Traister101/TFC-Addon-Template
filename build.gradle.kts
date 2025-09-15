@@ -105,15 +105,18 @@ neoForge {
 
         register("client") {
             client()
+            gameDirectory = file("run/client")
         }
 
         register("server") {
             server()
+            gameDirectory = file("run/server")
             programArgument("--nogui")
         }
 
         register("datagen") {
             data()
+            gameDirectory = file("run/datagen")
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             programArguments.addAll(
@@ -131,6 +134,7 @@ neoForge {
 
         register("gameTest") {
             type = "gameTestServer"
+            gameDirectory = file("run/game_test")
         }
     }
 
