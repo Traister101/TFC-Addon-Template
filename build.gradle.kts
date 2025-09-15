@@ -3,7 +3,7 @@ import org.slf4j.event.Level
 
 plugins {
     idea
-    id("net.neoforged.moddev") version "2.0.78"
+    alias(libs.plugins.modDevGradle)
 }
 
 // Mod stuff
