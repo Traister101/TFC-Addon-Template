@@ -16,6 +16,7 @@ public final class DataGenerators {
 		final var packOutput = generator.getPackOutput();
 
 		generator.addProvider(event.includeServer(), new BuiltInItemSizes(packOutput, lookupProvider));
+		generator.addProvider(event.includeServer(), new BuiltInRecipes(packOutput, lookupProvider));
 
 		generator.addProvider(event.includeClient(), new BuiltInLanguage(packOutput));
 		generator.addProvider(event.includeClient(), new BuiltInItemModels(packOutput, existingFileHelper));
