@@ -1,8 +1,10 @@
+import io.github.offz.githubPackage
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.slf4j.event.Level
 
 plugins {
     idea
+    alias(libs.plugins.githubPackages)
     alias(libs.plugins.modDevGradle)
 }
 
@@ -69,8 +71,10 @@ sourceSets {
  */
 val localRuntime: Configuration by configurations.creating
 
+val datagenImplementation = configurations.getByName("datagenImplementation")
+
 configurations.runtimeClasspath.configure {
-    extendsFrom(localRuntime)
+    extendsFrom(localRuntime, datagenImplementation)
 }
 
 configurations {
@@ -180,11 +184,18 @@ repositories {
         forRepository { maven { url = uri("https://www.cursemaven.com") } }
         filter { includeGroup("curse.maven") }
     }
+    exclusiveContent {
+        forRepository {
+            githubPackage("traister101/datagen-util")
+        }
+        filter { includeGroup("mod.traister101.datagenutils") }
+    }
 }
 
 dependencies {
     // datagen can use mod code
-    "datagenImplementation"(sourceSets["main"].output)
+    datagenImplementation(sourceSets["main"].output)
+    datagenImplementation(libs.datagenUtils)
 
     // QOL Dev dependencies should use `localRuntime`. `runtimeOnly` is for stuff we actually want at runtime
 

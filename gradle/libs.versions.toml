@@ -5,6 +5,7 @@
 parchment = "2024.07.07"
 parchmentMinecraft = "1.21"
 # Plugins
+githubPackages = "1.2.1"
 modDevGradle = "2.0.78"
 # Dependencies
 minecraft = "1.21.1"
@@ -15,6 +16,7 @@ emi = "1.1.10+1.21"
 jei = "19.22.1.316"
 top = "1.21_neo-12.0.4-6"
 patchouli = "1.21.1-92-NEOFORGE"
+datagenUtils = "1.1.2" # My (Traister101) datagen lib. Includes TFC datagen helpers, recomended
 # IMPORTANT change both this and the tfc file id for things to update correclty
 tfc = "4.0.0-beta"
 tfcFileId = "6993587"
@@ -32,6 +34,8 @@ jei = { group = "mezz.jei", name = "jei-1.21.1-neoforge", version.ref = "jei" }
 emi = { group = "dev.emi", name = "emi-neoforge", version.ref = "emi" }
 top = { group = "mcjty.theoneprobe", name = "theoneprobe", version.ref = "top" }
 patchouli = { group = "vazkii.patchouli", name = "Patchouli", version.ref = "patchouli" }
+# Datagen libs
+datagenUtils = { group = "mod.traister101.datagenutils", name = "datagen_utils-1.21.1", version.ref = "datagenUtils" }
 # Non standard maven
 jade = { group = "curse.maven", name = "jade-324717", version.ref = "jadeFileId" }
 modernfix = { group = "curse.maven", name = "modernfix-790626", version.ref = "modernfixFileId" }
@@ -41,6 +45,7 @@ junit-platform = { group = "org.junit.platform", name = "junit-platform-launcher
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit-jupiter" }
 
 [plugins]
+githubPackages = { id = "io.github.0ffz.github-packages", version.ref = "githubPackages" }
 modDevGradle = { id = "net.neoforged.moddev", version.ref = "modDevGradle" }
 
 [bundles]
