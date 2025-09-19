@@ -16,9 +16,14 @@ public final class DataGenerators {
 		final var packOutput = generator.getPackOutput();
 
 		generator.addProvider(event.includeServer(), new BuiltInItemSizes(packOutput, lookupProvider));
-		generator.addProvider(event.includeServer(), new BuiltInRecipes(packOutput, lookupProvider));
+		// The ItemHeatProvider generates extra recipes so we need to hang onto a reference to hand to our recipe provider
+		final var builtInItemHeat = generator.addProvider(event.includeServer(), new BuiltInItemHeat(packOutput, lookupProvider));
+		generator.addProvider(event.includeServer(), new BuiltInRecipes(packOutput, lookupProvider, builtInItemHeat));
+		// The EnhancedAdvancementProvider generates extra language so we need to hang onto a reference to hand to our language provider
+		final var builtInAdvancements = generator.addProvider(event.includeServer(),
+				BuiltInAdvancements.create(packOutput, lookupProvider, existingFileHelper));
 
-		generator.addProvider(event.includeClient(), new BuiltInLanguage(packOutput));
+		generator.addProvider(event.includeClient(), new BuiltInLanguage(packOutput, builtInAdvancements));
 		generator.addProvider(event.includeClient(), new BuiltInItemModels(packOutput, existingFileHelper));
 	}
 }

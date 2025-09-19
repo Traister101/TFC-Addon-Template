@@ -1,4 +1,8 @@
 {
+  "advancements.examplemod.example/child.description": "Craft an example item",
+  "advancements.examplemod.example/child.title": "Example Title Diamond Block",
+  "advancements.examplemod.example/root.description": "Example description",
+  "advancements.examplemod.example/root.title": "Example title",
   "examplemod.tooltip.example_item.example_tooltip": "Example Tooltip",
   "item.examplemod.example_item": "Example Item"
 }
