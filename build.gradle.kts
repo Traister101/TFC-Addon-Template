@@ -1,4 +1,4 @@
-import io.github.offz.githubPackage
+import io.github.apdevteam.githubPackage
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.slf4j.event.Level
 

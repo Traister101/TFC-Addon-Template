@@ -5,7 +5,7 @@
 parchment = "2024.07.07"
 parchmentMinecraft = "1.21"
 # Plugins
-githubPackages = "1.2.1"
+githubPackages = "1.2.2"
 modDevGradle = "2.0.78"
 # Dependencies
 minecraft = "1.21.1"
@@ -45,7 +45,7 @@ junit-platform = { group = "org.junit.platform", name = "junit-platform-launcher
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit-jupiter" }
 
 [plugins]
-githubPackages = { id = "io.github.0ffz.github-packages", version.ref = "githubPackages" }
+githubPackages = { id = "io.github.apdevteam.github-packages", version.ref = "githubPackages" }
 modDevGradle = { id = "net.neoforged.moddev", version.ref = "modDevGradle" }
 
 [bundles]
